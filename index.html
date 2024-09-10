@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu with Cart and Order Confirmation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Desserts</h1>
+  <div class="container">
+    <!-- Grid Menu -->
+    <div class="grid-menu">
+      <!-- Item 1 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-waffle-desktop.jpg" alt="Waffle">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Waffle <span>Waffle with Berries</span></div>
+        <div class="price">$6.50</div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-creme-brulee-desktop.jpg" alt="Crème Brûlée">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Crème Brûlée <span>Vanilla Bean Crème Brûlée</span></div>
+        <div class="price">$7.00</div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-macaron-desktop.jpg" alt="Macaron">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg"> Add to Cart</button>
+        <div class="name">Macaron <span>Macaron Mix of Five</span></div>
+        <div class="price">$8.00</div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-tiramisu-desktop.jpg" alt="Tiramisu">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Tiramisu <span>Classic Tiramisu</span></div>
+        <div class="price">$8.00</div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-baklava-desktop.jpg" alt="Baklava">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Baklava <span>Pistachio Baklava</span></div>
+        <div class="price">$4.00</div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-meringue-desktop.jpg" alt="Lemon Meringue Pie">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Pie <span>Lemon Meringue Pie</span></div>
+        <div class="price">$5.00</div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-cake-desktop.jpg" alt="Red Velvet Cake">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Cake <span>Red Velvet Cake</span></div>
+        <div class="price">$4.50</div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-brownie-desktop.jpg" alt="Brownie">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Brownie <span>Salted Caramel Brownie</span></div>
+        <div class="price">$4.50</div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="grid-item">
+        <img class="img" src="assets/images/image-panna-cotta-desktop.jpg" alt="Panna Cotta">
+        <button class="add"> <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart"> Add to Cart</button>
+        <div class="name">Panna Cotta <span>Vanilla Panna Cotta</span></div>
+        <div class="price">$6.50</div>
+      </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="confirm">
+      <div class="cart-header">
+        <h2>Your Cart (<span class="cart-count" id="cart-count">0</span>)</h2>
+      </div>
+      <div class="cart-items">
+        <!-- Dynamically added items will appear here -->
+      </div>
+      <div class="cart-total">
+        <p class="total-price">Total: <span id="total-price">$0.00</span></p>
+      </div>
+      <button id="confirm-order-btn" class="confirm-order">Confirm Order</button>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="order-confirmation" style="display: none;">
+    <div class="order-confirmation-content">
+      <img src="assets/images/download.jpeg" class="check-icon">
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+      <ul class="order-details">
+        <!-- Order items will be dynamically added here -->
+      </ul>
+      <p class="order-total-price">Order Total: <span id="order-total-price">$0.00</span></p>
+      <button class="start-new-order">Start New Order</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
