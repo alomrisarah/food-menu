@@ -46,39 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
    cartItemsContainer.appendChild(cartItem)
   })
 
-  function updateCount(button, change) {
-   const itemCountElement = button.closest(".grid-item").querySelector(".item-count")
-   let count = parseInt(itemCountElement.innerText, 10)
-   count += change
-   if (count < 0) count = 0 // Prevent negative count
-   itemCountElement.innerText = count
-   const gridItem = button.closest(".grid-item")
-
-   // Hide the "Add to Cart" button
-   button.style.display = "none"
-
-   // Show the count buttons
-   const countButtons = gridItem.querySelector(".count-buttons")
-   countButtons.style.display = "block"
-   // Optionally, toggle the visibility of buttons
-   const decrementButton = button.closest(".count-buttons").querySelector(".count-button:first-child")
-   decrementButton.style.display = count > 0 ? "inline" : "none"
-  }
-  // Update cart count and total price
   const totalItemCount = cartItems.reduce((total, item) => total + item.quantity, 0)
   cartCount.innerText = totalItemCount // Total quantity of all items
   const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.totalPrice), 0)
   totalPriceElement.innerText = `$${totalPrice.toFixed(2)}`
- }
- function updateCount(button, change) {
-  const itemCountElement = button.parentElement.previousElementSibling
-  let count = parseInt(itemCountElement.innerText, 10)
-  count += change
-  if (count < 0) count = 0 // Prevent negative count
-  itemCountElement.innerText = count
-
-  // Optionally, toggle the visibility of buttons
-  button.parentElement.querySelector(".count-button:first-child").style.display = count > 0 ? "inline" : "none"
  }
  function removeCartItem(name) {
   const itemIndex = cartItems.findIndex((item) => item.name === name)
@@ -108,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
  })
 
  startNewOrderButton.addEventListener("click", function () {
-  cartItems.length = 0 // Clear cart
+  cartItems.length = 0
   updateCart()
   orderConfirmation.style.display = "none"
  })
